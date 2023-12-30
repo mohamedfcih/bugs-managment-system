@@ -106,7 +106,7 @@ export class BugsListComponent implements OnInit {
 
   onActionSelected(event: { action: string; item: any }) {
     this.changeStatus(event);
-    this.cdr.markForCheck();
+    this.cdr.detectChanges();
   }
 
   changeStatus(payload: any) {
@@ -150,5 +150,6 @@ export class BugsListComponent implements OnInit {
 
   clearFilters() {
     this.Item$ = this.bugsService.getBugs();
+    this.cdr.detectChanges();
   }
 }
