@@ -1,0 +1,5 @@
+<div class="row" *ngIf="Item$ | async as vm">
+  <div class="col-lg-4 col-sm-12" *ngFor="let item of vm.items">
+    <app-release-stats [item] = "item"></app-release-stats>
+  </div>
+</div>

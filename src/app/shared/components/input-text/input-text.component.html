@@ -1,0 +1,48 @@
+<mat-form-field [appearance]="appearance" floatLabel="always">
+  <mat-label>{{ placeholder | titlecase }}</mat-label>
+  <input
+    *ngIf="!isTextArea"
+    matInput
+    [value] = "value"
+    [type]="type"
+    [formControl]="inputControl"
+    [disabled]="disabled"
+    [readonly]="disabled"
+    [placeholder]="placeholder | titlecase"
+    (focus)="markAsTouched()"
+    (input)="onChange($any($event.target).value)"
+    [id]="id"
+    (keyup)="onKeyup($event)"
+  />
+  <textarea
+    *ngIf="isTextArea"
+    matInput
+    [formControl]="inputControl"
+    [disabled]="disabled"
+    [readonly]="disabled"
+    [placeholder]="placeholder | titlecase"
+    (focus)="markAsTouched()"
+    (input)="onChange($any($event.target).value)"
+    [id]="id"
+    [rows]="rows"
+    (keyup)="onKeyup($event)"
+  ></textarea>
+  <mat-hint *ngIf="hint">{{ hint }}</mat-hint>
+  <span *ngIf="prefixText" matTextPrefix class="mx-1">{{ prefixText }}</span>
+  <mat-error *ngIf="touched && inputControl.errors">
+    {{ inputControl.errors | validationHandler }}
+  </mat-error>
+</mat-form-field>
+
+<!--
+  ==========
+  HOW TO USE
+  ==========
+   <div [formGroup]="form">
+      <app-input-text
+        appearance="outline"
+        formControlName="text"
+        placeholder="just test"
+      ></app-input-text>
+  </div>
+ -->

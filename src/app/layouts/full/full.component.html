@@ -1,0 +1,75 @@
+<!-- ============================================================== -->
+<!-- Main wrapper - style you can find in pages.scss -->
+<!-- ============================================================== -->
+<div class="main-container">
+  <!-- ============================================================== -->
+  <!-- Topbar - style you can find in header.scss -->
+  <!-- ============================================================== -->
+  <mat-toolbar color="primary" class="topbar telative">
+    <!-- ============================================================== -->
+    <!-- Logo - style you can find in header.scss -->
+    <!-- ============================================================== -->
+    <div class="navbar-logo">
+      <!-- <h2>{{ "app_name" | translate }}</h2> -->
+      <img src="assets/images/bug-xxl.png" alt="logo" />
+      <h4>Bugs Manager</h4>
+      <!-- ============================================================== -->
+      <!-- sidebar toggle -->
+      <!-- ============================================================== -->
+
+      <button mat-icon-button (click)="snav.toggle()" value="sidebarclosed">
+        <mat-icon>menu</mat-icon>
+      </button>
+    </div>
+    <!-- ============================================================== -->
+    <!-- app header component - style you can find in header.scss / header.component.ts-->
+    <!-- ============================================================== -->
+    <div class="d-flex align-items-center gap-2 m-inline-start-auto">
+      <app-mode-toggler></app-mode-toggler>
+    </div>
+    <div class="d-flex align-items-center gap-2 m-inline-start-auto">
+      <app-language-selector></app-language-selector>
+    </div>
+  </mat-toolbar>
+  <!-- ============================================================== -->
+  <!-- End Topbar - style you can find in pages.scss -->
+  <!-- ============================================================== -->
+  <mat-sidenav-container
+    class="example-sidenav-container"
+    [style.marginTop.px]="mobileQuery.matches ? 0 : 0"
+  >
+    <!-- ============================================================== -->
+    <!-- Sidebar - style you can find in sidebar.scss -->
+    <!-- ============================================================== -->
+    <mat-sidenav
+      #snav
+      id="snav"
+      class="dark-sidebar pl-xs"
+      [mode]="mobileQuery.matches ? 'side' : 'over'"
+      fixedTopGap="0"
+      [opened]="mobileQuery.matches"
+      [disableClose]="mobileQuery.matches"
+      [(opened)]="opened"
+    >
+      <app-sidebar></app-sidebar>
+    </mat-sidenav>
+    <!-- ============================================================== -->
+    <!-- Sidebar - style you can find in sidebar.scss -->
+    <!-- ============================================================== -->
+
+    <!-- ============================================================== -->
+    <!-- Page container - style you can find in pages.scss -->
+    <!-- ============================================================== -->
+    <mat-sidenav-content
+      class="page-wrapper"
+      [ngClass]="{ 'sidenav-closed': !opened, 'sidenav-opened': opened }"
+    >
+      <div class="page-content">
+        <router-outlet><app-spinner></app-spinner></router-outlet>
+      </div>
+    </mat-sidenav-content>
+    <!-- ============================================================== -->
+    <!-- Page container - style you can find in pages.scss -->
+    <!-- ============================================================== -->
+  </mat-sidenav-container>
+</div>

@@ -1,0 +1,23 @@
+/* paginated-table.component.css */
+.action-button {
+  margin: 0;
+  padding: 0;
+  min-width: 0;
+  background: none;
+  border: none;
+  font-size: inherit;
+  color: inherit;
+  cursor: pointer;
+}
+
+mat-header-cell {
+  text-transform: capitalize !important;
+}
+
+mat-row{
+  &:hover{
+    background-color: #F5f5f5 !important; /* Change the background color to your desired color */
+    cursor: pointer; /* Optional: Change cursor to pointer on hover */
+  }
+}
+

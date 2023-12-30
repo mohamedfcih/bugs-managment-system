@@ -1,0 +1,28 @@
+<mat-select
+  (selectionChange)="onChangeLang()"
+  [(value)]="selectedLang"
+  [hideSingleSelectionIndicator]="true"
+  panelClass="lang-selector"
+>
+  <mat-select-trigger>
+    <span class="lang-option text-light">
+      <mat-icon
+        [svgIcon]="selectedLang === language.ENGLISH ? 'usa-flag' : 'suadi-flag'"
+      ></mat-icon>
+      {{ (selectedLang === "en" ? "English" : "العربية") | translate }}
+    </span>
+  </mat-select-trigger>
+
+  <mat-option [value]="language.ENGLISH">
+    <span class="lang-option">
+      <mat-icon [svgIcon]="'usa-flag'"></mat-icon>
+      English
+    </span>
+  </mat-option>
+  <mat-option [value]="language.ARABIC">
+    <span class="lang-option">
+      <mat-icon [svgIcon]="'suadi-flag'"></mat-icon>
+       العربية
+    </span>
+  </mat-option>
+</mat-select>

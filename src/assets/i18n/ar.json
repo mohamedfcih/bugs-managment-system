@@ -1,0 +1,101 @@
+{
+  "app_name": "Bugs Manager",
+  "close": "إغلاق",
+  "yes": "نعم",
+  "validation_message": {
+    "required_validation": "هذا الحقل إجباري",
+    "minlength_validation": "الحد الأدنى",
+    "maxlength_validation": "الحد الأقصى",
+    "email_validation": "البريد الإلكتروني غير صالح",
+    "english_only_validation": "يجب أن تحوي الأحرف إنكليزية فقط",
+    "arabic_only_validation": "يجب أن تحوي الأحرف عربية فقط",
+    "url_validation": " من فضلك أكتب رابط صحيح. "
+  },
+
+  "common_fields": {
+
+    "lang": "اللغة",
+    "search": "ابحث",
+    "search_by_title":"ابحث بعنوان المشكلة"
+
+
+  },
+  "common_btns": {
+    "save": "حفظ",
+    "verify": "تحقق",
+    "close": "إغلاق",
+    "cancel": "إلغاء",
+    "submit": "إرسال",
+    "resend": "إعادة إرسال",
+    "back": "الرجوع",
+    "delete": "يمسح",
+    "edit": "تعديل",
+    "show_more": "إظهار المزيد"
+  },
+  "success_messages": {
+    "login_success": "تم تسجيل الدخول بنجاح",
+    "create_success": "تم الإنشاء بنجاح",
+    "update_success": "تم التعديل بنجاح",
+    "delete_success": "تم الحذف بنجاح",
+    "changed_success": "تم تغير الحالة بنجاح",
+    "create_role": "تم إنشاء الدور بنجاح",
+    "update_role": "تم تعديل الدور بنجاح",
+    "delete_role": "تم حذف الدور بنجاح",
+    "assign_role": "تمت عملية إسناد الدور بنجاح",
+    "deassign_role": "تمت عملية سحب الاسناد بنجاح",
+    "assign_bug": "تمت عملية إسناد المجموعة بنجاح",
+    "deassign_bug": "تمت عملية سحب الاسناد بنجاح"
+  },
+  "warning_messages": {
+    "delete_confirm": "هل أنت متأكد من أنك تريد حذف هذا العنصر؟",
+    "change_status": "هل انت متأكد  من تغير الحالة لهذا العنصر؟",
+    "delete_role": "هل أنت متأكد من أنك تريد حذف هذا الدور؟",
+    "assign_role": "هل أنت متأكد من أنك تريد إسناد  هذا الدور للمستخدم؟",
+    "deassign_role": "هل أنت متأكد من أنك تريد سحب إسناد  هذا الدور من المستخدم؟",
+    "assign_bug": "هل أنت متأكد من أنك تريد إسناد  هذه المجموعة للمستخدم؟",
+    "deassign_bug": "هل أنت متأكد من أنك تريد سحب إسناد  هذه المجموعة من المستخدم؟",
+    "no_permission": "ليس لديك صلاحية للوصول لهذه الصفحة!"
+  },
+
+
+  "bugs_management": {
+    "title": "إدارة الاخطاء",
+    "bug_name": "اسم المشكلة",
+
+    "create_bug": "اضافة تقرير بمشكلة جديدة",
+
+    "bug_details": "تفاصيل المشكلة"
+  },
+
+  "dashboard": {
+    "title": "الاحصائيات",
+    "bug_name": "اسم المشكلة",
+
+    "create_bug": "اضافة تقرير بمشكلة جديدة",
+
+    "bug_details": "تفاصيل المشكلة"
+  },
+
+
+
+  "message": {
+    "no_data": "لاتوجد بيانات",
+    "error": "خطأ",
+    "confirm": "تأكيد"
+  },
+  "table_cell": {
+    "actions": "إجرائات",
+    "status": "الحالة"
+  },
+  "paginator": {
+    "item_per_page": "عنصر لكل صفحة",
+    "next": "الصفحة التالية",
+    "prev": "الصفحة السابقة",
+    "of": "من",
+    "go_to": "اذهب إلى:"
+  },
+  "empty": {
+    "no_data": "لا توجد بيانات ",
+    "no_user_assigned": "لم يتم تعيين أي مستخدمين لهذه المجموعة حتى الآن"
+  }
+}

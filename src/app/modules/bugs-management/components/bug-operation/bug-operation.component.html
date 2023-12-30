@@ -1,0 +1,77 @@
+<h2 mat-dialog-title>
+  {{ data.mode === "add" ? "Add Item" : "View Details" }}
+</h2>
+<form [formGroup]="form" class="p-3">
+  <div class="row d-flex">
+    <div class="col-md-12">
+      <app-input-text
+        [appearance]="data.mode === 'view' ? 'fill' : 'outline'"
+        formControlName="title"
+        placeholder="Title"
+      ></app-input-text>
+    </div>
+    <div class="col-md-6">
+      <app-select
+        [appearance]="data.mode === 'view' ? 'fill' : 'outline'"
+        [required]="true"
+        formControlName="severity"
+        valueProps="value"
+        labelProps="value"
+        placeholder="Severity"
+        [items]="severityList"
+        [multiple]="false"
+      ></app-select>
+    </div>
+    <div class="col-md-6">
+      <app-select
+        [appearance]="data.mode === 'view' ? 'fill' : 'outline'"
+        [required]="true"
+        formControlName="release"
+        valueProps="value"
+        labelProps="value"
+        placeholder="Release"
+        [items]="releases"
+        [multiple]="false"
+      ></app-select>
+    </div>
+    <div class="col-md-12">
+      <app-input-text
+        [isTextArea]="true"
+        [appearance]="data.mode === 'view' ? 'fill' : 'outline'"
+        formControlName="description"
+        placeholder="Description"
+      ></app-input-text>
+    </div>
+
+    <div formArrayName="links">
+      <div class="example-button-container">
+        <div class="d-flex mb-3">
+          <h3>Links</h3>
+          <button mat-mini-fab color="accent" class="mx-3" *ngIf = "data.mode === 'add'" (click)="addInput()" aria-label="Example icon button with a plus one icon">
+            <mat-icon>add</mat-icon>
+          </button>
+        </div>
+
+      </div>
+      <div class="d-flex justify-content-between w-100"  *ngFor ="let control of links.controls; index as i">
+        <app-input-text
+        class="col-11"
+        [formControlName]="i"
+        [appearance]="data.mode === 'view' ? 'fill' : 'outline'"
+        placeholder="link"
+      ></app-input-text>
+      <button mat-mini-fab color="accent" [disabled]="data.mode === 'view'" class="mx-3" (click)="removeItem(i)" aria-label="Example icon button with a plus one icon">
+        <mat-icon>remove</mat-icon>
+      </button>
+      </div>
+
+    </div>
+
+  </div>
+</form>
+  <div class="row d-flex p-3 justify-content-end">
+    <div class="col-6">  <button mat-raised-button color="warn" class="w-100" (click)="closeDialog()">Close</button>
+    </div>
+    <div class="col-6" *ngIf = "data.mode ==='add'">  <button mat-raised-button color="primary" [disabled] = "!form.valid" class="w-100" (click)="addbug()">Save</button>
+    </div>
+</div>

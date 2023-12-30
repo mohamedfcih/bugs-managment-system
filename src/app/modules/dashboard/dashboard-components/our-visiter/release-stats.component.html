@@ -1,0 +1,49 @@
+<mat-card>
+  <mat-card-content>
+    <mat-card-title>Release {{item.name}}</mat-card-title>
+    <mat-card-subtitle>the data is fake but it simulates the backend response</mat-card-subtitle>
+    <div class="piechart">
+      <apx-chart
+      #releaseChart
+        [series]="item.stats"
+        [chart]="StatsChartOptions.chart"
+        [labels]="StatsChartOptions.labels"
+        [responsive]="StatsChartOptions.responsive"
+        [tooltip]="StatsChartOptions.tooltip"
+        [legend]="StatsChartOptions.legend"
+        [colors]="StatsChartOptions.colors"
+        [dataLabels]="StatsChartOptions.dataLabels"
+        [plotOptions]="StatsChartOptions.plotOptions"
+        [stroke]="StatsChartOptions.stroke"
+
+      >
+      </apx-chart>
+    </div>
+  </mat-card-content>
+  <hr />
+  <mat-card-content>
+    <ul class="list-inline text-center">
+      <li>
+        <h6 class="text-success m-0">
+          <i class="mdi mdi-checkbox-blank-circle font-10 m-r-10"></i>To do
+        </h6>
+      </li>
+      <li>
+        <h6 class="text-info m-0">
+          <i class="mdi mdi-checkbox-blank-circle font-10 m-r-10"></i>In Progress
+        </h6>
+      </li>
+      <li>
+        <h6 class="text-purple m-0">
+          <i class="mdi mdi-checkbox-blank-circle font-10 m-r-10"></i>Done
+        </h6>
+      </li>
+
+      <li>
+        <h6 class="text-secondary m-0">
+          <i class="mdi mdi-checkbox-blank-circle font-10 m-r-10"></i>Canceled
+        </h6>
+      </li>
+    </ul>
+  </mat-card-content>
+</mat-card>

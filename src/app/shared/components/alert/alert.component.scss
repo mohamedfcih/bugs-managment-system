@@ -1,0 +1,33 @@
+div {
+
+  padding: 0.75rem 1.25rem;
+  margin-bottom: 1rem;
+  border-radius: 0.25rem;
+
+  &.error {
+    color: #721c24;
+    background-color: #f8d7da;
+    border-color: #f5c6cb;
+    border-inline-start: 4px solid #721c24;
+  }
+
+  &.success {
+    color: #155724;
+    background-color: #d4edda;
+    border-color: #c3e6cb;
+    border-inline-start: 4px solid #155724;
+  }
+
+  &.warning {
+    color: #856404;
+    background-color: #fff3cd;
+    border-color: #fff3cd;
+    border-inline-start: 4px solid #856404;
+  }
+
+  ul {
+    margin: 0;
+    padding-inline-start: 1rem;
+  }
+
+}

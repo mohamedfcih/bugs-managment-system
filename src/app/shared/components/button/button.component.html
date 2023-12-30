@@ -1,0 +1,20 @@
+<button
+  mat-raised-button
+  color="{{ color }}"
+  [disabled]="disabled || loading"
+  (click)="onClick()"
+>
+  <div class="d-flex">
+    <ng-content></ng-content>
+    <mat-spinner [color]="''" [diameter]="20" *ngIf="loading"></mat-spinner>
+  </div>
+</button>
+
+<!--
+  ==========
+  HOW TO USE
+  ==========
+  <app-button color="primary" (clickAction)="getAction($event)" [loading]="loading">
+    Any Text
+  </app-button>
+ -->

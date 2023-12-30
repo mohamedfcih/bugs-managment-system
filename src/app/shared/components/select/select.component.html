@@ -1,0 +1,39 @@
+<mat-form-field [appearance]="appearance">
+  <mat-label>{{ placeholder }}</mat-label>
+  <mat-select
+    [formControl]="selectListControl"
+    [multiple]="multiple"
+    (blur)="markAsTouched()"
+    [id]="id"
+    (selectionChange)="onSelectChange($event)"
+    [disabled]="true"
+  >
+    <mat-option *ngFor="let item of items" [value]="item[valueProps]">
+      {{
+         item[labelProps]
+      }}
+    </mat-option>
+  </mat-select>
+  <mat-error *ngIf="touched && selectListControl.errors">
+    {{ selectListControl.errors | validationHandler }}
+  </mat-error>
+</mat-form-field>
+
+<!--
+  ==========
+  HOW TO USE
+  ==========
+   <div [formGroup]="form">
+     <app-select
+      appearance="fill"
+      [required]="true"
+      valueProps="value"
+      labelProps="label"
+      placeholder="text"
+      [items]="items"
+      formControlName="select"
+      [multiple]="false"
+      (selectedItems)="getSelected($event)"
+    ></app-select>
+  </div>
+ -->

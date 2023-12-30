@@ -1,0 +1,59 @@
+<mat-card>
+  <form  class="p-3" #filterForm="ngForm">
+    <div class="d-flex justify-content-between">
+      <h5 class="text-secondary mb-3">Filter Bugs </h5>
+      <button mat-button color="accent" class="mb-2 p-1" (click)="clearFilters()">Clear filters</button>
+    </div>
+    <div class="row d-flex">
+      <div class="col-md-3 col-12">
+        <app-input-text
+        appearance="outline"
+        [(ngModel)]="filterObj.title"
+        [ngModelOptions]="{standalone: true}"
+        (input) = "filter(filterObj)"
+        placeholder="Search by bug title"
+      ></app-input-text>
+      </div>
+      <div class="col-md-3 col-12">
+        <app-select
+          appearance="outline"
+          [(ngModel)]="filterObj.status"
+          (ngModelChange) = "filter(filterObj)"
+          [ngModelOptions]="{standalone: true}"
+          valueProps="value"
+          labelProps="value"
+          placeholder="Status"
+          [items]="statusList"
+          [multiple]="false"
+        ></app-select>
+      </div>
+      <div class="col-md-3 col-12">
+        <app-select
+          appearance="outline"
+          [(ngModel)]="filterObj.release"
+          (ngModelChange) = "filter(filterObj)"
+          [ngModelOptions]="{standalone: true}"
+          valueProps="value"
+          labelProps="value"
+          placeholder="Release"
+          [items]="releases"
+          [multiple]="false"
+        ></app-select>
+      </div>
+      <div class="col-md-3 col-12">
+        <app-select
+          appearance="outline"
+          [(ngModel)]="filterObj.severity"
+          (ngModelChange) = "filter(filterObj)"
+          [ngModelOptions]="{standalone: true}"
+          valueProps="value"
+          labelProps="value"
+          placeholder="Severity"
+          [items]="severityList"
+          [multiple]="false"
+        ></app-select>
+      </div>
+
+    </div>
+  </form>
+</mat-card>

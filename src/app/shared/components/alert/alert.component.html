@@ -1,0 +1,7 @@
+<ng-container *ngIf="messages.length">
+  <div class="{{ type }}">
+    <ul>
+      <li *ngFor="let item of messages">{{ item }}</li>
+    </ul>
+  </div>
+</ng-container>

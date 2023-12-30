@@ -1,0 +1,18 @@
+<div class="d-flex align-items-baseline justify-content-between my-2">
+  <h3 class="text-primary">{{ "bugs_management.title" | translate }}</h3>
+  <button mat-flat-button color="primary" (click)="openItemDialog('add')">
+    {{ "bugs_management.create_bug" | translate }}
+  </button>
+</div>
+<app-bugs-filter (onFilter)="filterBugs($event)" (onClear)="clearFilters()"></app-bugs-filter>
+<div *ngIf="Item$ | async as vm">
+  <app-table
+    [data]="vm.items"
+    (rowClicked)="onRowClick($event)"
+    [displayedColumns]="displayedColumns"
+    [pageSize]="5"
+    [pageSizeOptions]="[5, 10, 25]"
+    [actions]="myActions"
+    (actionSelected)="onActionSelected($event)"
+  ></app-table>
+</div>

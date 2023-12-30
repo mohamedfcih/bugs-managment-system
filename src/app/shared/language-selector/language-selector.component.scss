@@ -1,0 +1,19 @@
+.flag {
+  width: 20px;
+  height: 20px;
+  margin-inline: 8px;
+}
+
+.lang-option {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  white-space: nowrap;
+}
+
+::ng-deep {
+  .lang-selector {
+    min-width: fit-content !important;
+    margin-inline-start: -2rem !important;
+  }
+}

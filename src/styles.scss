@@ -1,0 +1,37 @@
+/* You can add global styles to this file, and also import other style files */
+.cursor-pointer {
+  cursor: pointer;
+}
+
+input::-ms-reveal,
+input::-ms-clear {
+  display: none;
+}
+
+// reset direction for arrow at Matrial datepicker
+[dir="rtl"] {
+  .mat-calendar-next-button,
+  .mat-calendar-previous-button {
+    transform: unset !important;
+  }
+
+  .mdc-dialog__container {
+    direction: rtl;
+  }
+}
+
+mat-slide-toggle .mdc-label {
+  color: #fff;
+}
+
+.dark-mode {
+  .mat-drawer {
+    background: #1d2126;
+  }
+  .page-content {
+    background: #323743;
+  }
+  h1,h2,h3,h4,h6{
+    color: #fff !important;
+  }
+}

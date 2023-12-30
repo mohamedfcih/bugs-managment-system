@@ -1,0 +1,44 @@
+<!-- paginated-table.component.html -->
+<mat-table [dataSource]="dataSource" matSort>
+  <!-- Define your table columns -->
+  <ng-container *ngFor="let column of displayedColumns" [matColumnDef]="column">
+    <mat-header-cell *matHeaderCellDef mat-sort-header>{{
+      column
+    }}</mat-header-cell>
+    <mat-cell *matCellDef="let element; let i = index" [ngSwitch]="column">
+      <ng-container *ngSwitchCase="'actions'">
+        <button
+          mat-icon-button
+          [matMenuTriggerFor]="menu"
+          aria-label="Actions"
+          class="action-button"
+        >
+          <mat-icon>more_vert</mat-icon>
+        </button>
+        <mat-menu #menu="matMenu">
+          <button
+            mat-menu-item
+            *ngFor="let action of actions"
+            (click)="onActionSelect(action.label, element)"
+          >
+            {{ action.label }}
+          </button>
+        </mat-menu>
+      </ng-container>
+      <ng-container *ngSwitchDefault>{{ element[column] }}</ng-container>
+    </mat-cell>
+  </ng-container>
+
+  <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+  <mat-row
+    *matRowDef="let row; columns: displayedColumns"
+    (click)="rowClick($event,row)"
+  ></mat-row>
+</mat-table>
+
+<mat-paginator
+  [pageSize]="pageSize"
+  [pageSizeOptions]="pageSizeOptions"
+  (page)="onPageChange($event)"
+>
+</mat-paginator>
